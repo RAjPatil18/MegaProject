@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/resume.css">
+    
+    <title>Document</title>
+    <style>
+        #nameField{
+            width: 70%;
+        }
+        .card{
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+     
+    <div class="container" id="resume-form">
+        <h1 class="text-center my-3 text-primary">Resume Builder</h1>
+
+        <div class="row" style="border: 2px solid black;">
+
+            <div class="col-md-6 " style="border: 2px solid red;">
+                <h3 class="text-center ">Personal Information</h3>
+
+                <div class="form-group">
+                    <label for="nameField" class="my-2"> Your Name</label>
+                    <input type="text" class="form-control " name="" id="nameField" placeholder="Enter Your Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactField" class="mt-4"> Your Contact</label>
+                    <input type="text" class="form-control " name="" id="contactField" placeholder="Enter Your Contact">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailField" class="mt-4"> Your Email</label>
+                    <input type="email" class="form-control " name="" id="emailField" placeholder="Enter Your Email">
+                </div>
+
+                <div class="form-group">
+                    <label for="addressField" class="mt-4"> Your Address</label>
+                    <textarea  class="form-control " rows="4" name="" id="addressField" placeholder="Enter Your Address"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="profileField" class="mt-4">Select Profile</label>
+                    <input type="file" class="form-control mt-2" name="" id="profileField" placeholder="choose file">
+                </div>
+
+                <p class="text-secondary mt-5">Skills</p>
+                <div class="form-group">
+                    <label for="TechnicalField" class="mt-4">Technical Skills</label>
+                    <textarea  class="form-control " rows="2" name="" id="TechnicalField" placeholder="Skills"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="familiarField" class="mt-4">Familiar With</label>
+                    <textarea  class="form-control " rows="2" name="" id="familiarField" placeholder="familiar with"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="softskillField" class="mt-4">Soft Skills</label>
+                    <textarea  class="form-control " rows="2" name="" id="softskillField" placeholder="familiar with"></textarea>
+                </div>
+            
+
+                <p class="text-secondary mt-5">Links</p>
+
+                <div class="form-group">
+                    <label for="linkedinField" class="my-2">Linkedin URL</label>
+                    <input type="text" class="form-control " name="" id="linkedinField" placeholder="Linkedin">
+                </div>
+                <div class="form-group">
+                    <label for="GitField" class="my-2">Git/Github URL</label>
+                    <input type="text" class="form-control " name="" id="gitField" placeholder="Git">
+                </div>
+                <div class="form-group">
+                    <label for="anyurlField" class="my-2">Any Other URL(Leetcode,Codechef,etc)</label>
+                    <input type="text" class="form-control " name="" id="anyurlField" placeholder="Leetcode,codechef,etc">
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="col-md-6" style="border: 2px solid red;">
+                <h3 class="text-center ">Professional Information</h3>
+
+                <div class="form-group">
+                    <label for="objfield" class="mt-4">Objective</label>
+                    <textarea  class="form-control " rows="4" name="" id="objfield" placeholder="Career objective"></textarea>
+                </div>
+
+                <div class="form-group" id="academics">
+                    <label for="qualificationfield" class="mt-2">Academic Qualification</label>
+                    <textarea  class="form-control academicfield" rows="3" name="" id="qualificationfield" placeholder="Qualification"></textarea>
+                    <div class="container text-center mt-3" id="addacademicbuttondiv">
+                        <button onclick="addAcademicField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group" id="projects">
+                    <label for="projectfield" class="mt-3">Projects</label>
+
+                    <div class="container" id="projectdetails">
+                        <input type="text" class="form-control my-2 titleOfProjects" name="" id="" placeholder="Title Of Project">
+                        <textarea  class="form-control projectfield" rows="3" name="" id="workexpfield" placeholder="Project Description"></textarea>
+                    </div>         
+                    <div class="container text-center mt-3" id="addprojectbuttondiv">
+                        <button onclick="addprojectField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+
+                <div class="form-group" id="woekexp">
+                    <label for="workexpfield" class="mt-3">Work Experience</label>
+                    <textarea  class="form-control wefield" rows="3" name="" id="workexpfield" placeholder="Work Experience"></textarea>
+                    <div class="container text-center mt-3" id="addworkbuttondiv">
+                        <button onclick="addnewWorkField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="container text-center my-3">
+            <button class="btn btn-primary btn-lg" onclick="generateResume()">Generate Resume</button>
+        </div>
+
+       
+    </div>
+
+
+    <!-- generate resume -->
+
+    <div class="container" id="resume-template">
+
+        <div class="row" id="Ourresume"  style="border:1px solid black;">
+            <div class="col-md-3 background " style="border: 2px solid black;">
+               <div class="profileimg text-center">
+                <img src="Images/pp2.png" alt="" id="Tprofile" class="img-fluid mt-2 profilePhoto"/>
+               </div>
+               <div class="containerDetails mt-2">
+                <!-- <p id="Tname1">Raj Patil</p> -->
+                <label for="" style="font-weight:600">Contact</label>
+                <hr>
+                <label for="">Phone</label>
+                <p id="Tcontact">+91 7885459625</p>
+                <label for="">Email</label>
+                <p id="Temail">raj@gmail.com</p>
+                <label for="">Address</label>
+                <p id="Taddress">At Post Malkapur, Karad, Maharastra</p>
+                <hr/>
+    
+                <p ><a href="#" id="Tlinkedin" style="padding: 5px 5px;">facebook</a><a href="#" id="Tgithub">Instagram</a></p>
+                <!-- <p></p> -->
+                <p><a href="#" id="Tanyurl">Linkedin</a></p>
+               </div>
+            </div>
+    
+            <div class="col-md-8 mx-3">
+    
+                <h1 class="text-center" id="Tname2" style="font-weight: 980;">Raj Patil</h1>
+    
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="Tobj">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Voluptates optio pariatur quam sapiente dolore at illum 
+                            voluptas aperiam veritatis, numquam vel. Iusto quos vel, 
+                            esse veritatis illum minima hic quibusdam.</p>
+                    </div>
+                </div>
+    
+    
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                       <ul id="Twork">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                       </ul>
+                    </div>
+                </div>
+    
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="Tqualification">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                       </ul>
+                    </div>
+                </div>
+    
+    
+            </div>
+           
+        </div>
+        <div class="backbutton">
+            <button class="btn btn-primary mt-2" style="float: left;" id="backbtn" onclick="window.location.href='resume.html';">Back</button>
+        </div>
+        <div class="container text-center">
+            <button class="btn btn-primary mt-4" id="printResume" onclick="printResume()">Print Resume</button>
+        </div>
+     </div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js"> </script>
+    
+</body>
+</html>

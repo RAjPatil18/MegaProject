@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="demo.css"> -->
+    <title>Document</title>
+
+    <style>
+        .profilePhoto{
+            width: 200px;
+        }
+        .background{
+            background-color: rgb(134, 134, 134);
+        }
+    </style>
+</head>
+<body>
+    
+ <div class="container" id="resume-template">
+
+    <div class="row" style="border:1px solid black;">
+        <div class="col-md-3 text-center background">
+           <img src="Images/defaultProfile.png" alt="" class="img-fluid profilePhoto"/>
+           <div class="containerDetails">
+            <p id="Tname1">Raj Patil</p>
+            <p id="Tcontact">+91 7885459625</p>
+            <p id="Taddress">At Post Malkapur, Karad, Maharastra</p>
+
+            <hr/>
+
+            <p ><a href="#" id="Tlinkedin" style="padding: 5px 5px;">facebook</a><a href="#" id="Tgithub">Instagram</a></p>
+            <!-- <p></p> -->
+            <p><a href="#" id="Tanyurl">Linkedin</a></p>
+           </div>
+        </div>
+
+        <div class="col-md-8">
+
+            <h1 class="text-center" id="Tname2" style="font-weight: 980;">Raj Patil</h1>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Objective</h3>
+                </div>
+                <div class="card-body">
+                    <p id="Tobj">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Voluptates optio pariatur quam sapiente dolore at illum 
+                        voluptas aperiam veritatis, numquam vel. Iusto quos vel, 
+                        esse veritatis illum minima hic quibusdam.</p>
+                </div>
+            </div>
+
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Work Experience</h3>
+                </div>
+                <div class="card-body">
+                   <ul id="Twork">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                   </ul>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Academic Qualification</h3>
+                </div>
+                <div class="card-body">
+                    <ul id="Tqualification">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, cumque?</li>
+                   </ul>
+                </div>
+            </div>
+
+
+        </div>
+       
+    </div>
+    <div class="backbutton">
+        <button class="btn btn-primary mt-2" style="float: left;" onclick="window.location.href='resume.html';">Back</button>
+    </div>
+    <div class="container text-center">
+        <button class="btn btn-primary mt-4" onclick="printResume()">Print Resume</button>
+    </div>
+ </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="script.js"> </script>
+</body>
+</html>
+
